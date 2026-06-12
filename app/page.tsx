@@ -17,15 +17,24 @@ export default function LandingPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto border-b border-slate-50">
+      {/* Changed to flex-col and items-center to stack them vertically */}
+      <nav className="flex flex-col items-center gap-6 px-8 py-8 max-w-7xl mx-auto border-b border-slate-50">
+        
+        {/* Logo Section */}
         <div className="flex items-center gap-2">
           <div className="bg-blue-600 p-1.5 rounded-lg shadow-md shadow-blue-200">
             <ShieldCheck className="text-white w-6 h-6" />
           </div>
-          <span className="font-bold text-xl tracking-tight text-slate-900 italic">BridgeSync <span className="text-blue-600">Pro</span></span>
+          <span className="font-bold text-xl tracking-tight text-slate-900 italic">
+            BridgeSync <span className="text-blue-600">Pro</span>
+          </span>
         </div>
+
+        {/* Buttons Section - Now sits underneath */}
         <div className="flex items-center gap-6">
-          <Link href="/login" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Login</Link>
+          <Link href="/login" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">
+            Login
+          </Link>
           <Button 
             onClick={() => window.location.href='/login'} 
             className="bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 px-6"
@@ -37,9 +46,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="px-8 py-24 max-w-7xl mx-auto text-center animate-in fade-in slide-in-from-top-4 duration-700">
-        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-bold mb-8 uppercase tracking-widest border border-blue-100">
-          <Zap className="w-4 h-4 fill-blue-700" /> Authorized eTIMS Compliance Tool
-        </div>
+        
         <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
           Stop Manually Typing <br /><span className="text-blue-600">eTIMS Receipts.</span>
         </h1>
