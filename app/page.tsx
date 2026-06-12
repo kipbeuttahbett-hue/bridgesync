@@ -1,140 +1,119 @@
-"use client"
-
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { 
-  ShieldCheck, 
-  Zap, 
-  BarChart3, 
-  Clock, 
-  CheckCircle2, 
-  ArrowRight,
-  ShieldAlert,
-  Save
-} from "lucide-react"
+import React from 'react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Zap, Layers, Lock } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="bg-white min-h-screen">
-      {/* Navigation */}
-      {/* Changed to flex-col and items-center to stack them vertically */}
-      <nav className="flex flex-col items-center gap-6 px-8 py-8 max-w-7xl mx-auto border-b border-slate-50">
-        
-        {/* Logo Section */}
+    <div className="bg-slate-50 min-h-screen font-sans text-slate-900">
+      {/* Navigation - Optimized for focus */}
+      <nav className="flex flex-col items-center gap-4 px-8 py-10 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <div className="bg-blue-600 p-1.5 rounded-lg shadow-md shadow-blue-200">
-            <ShieldCheck className="text-white w-6 h-6" />
+          <div className="bg-blue-600 p-1.5 rounded-lg shadow-lg shadow-blue-200">
+            <ShieldCheck className="text-white w-7 h-7" />
           </div>
-          <span className="font-bold text-xl tracking-tight text-slate-900 italic">
+          <span className="font-extrabold text-2xl tracking-tight italic">
             BridgeSync <span className="text-blue-600">Pro</span>
           </span>
         </div>
-
-        {/* Buttons Section - Now sits underneath */}
         <div className="flex items-center gap-6">
-          <Link href="/login" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">
-            Login
-          </Link>
-          <Button 
-            onClick={() => window.location.href='/login'} 
-            className="bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 px-6"
-          >
-            Get Started
-          </Button>
+          <button className="text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors">
+            Sign In
+          </button>
+          <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-700 shadow-md transition-all">
+            Start Free Trial
+          </button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="px-8 py-24 max-w-7xl mx-auto text-center animate-in fade-in slide-in-from-top-4 duration-700">
-        
-        <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
-          Stop Manually Typing <br /><span className="text-blue-600">eTIMS Receipts.</span>
+      {/* Hero Section - The "Hook" */}
+      <section className="px-8 pt-12 pb-24 max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold mb-6 uppercase tracking-wider">
+          <Zap size={14} /> New: V2.0 Integration Engine
+        </div>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r dark:from-slate-900 from-slate-800 to-slate-500">
+          Sync your workflow <br /> 
+          <span className="text-blue-600">without the friction.</span>
         </h1>
-        <p className="text-xl text-slate-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-          The official bridge for Kenyan Wholesalers and Pharmacies. 
-          Upload your daily sales Excel. We sync it with KRA in seconds. 
-          <span className="block font-semibold text-slate-800 mt-2">No more 1 Million Shilling fines.</span>
+        <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          The all-in-one bridge for your data and team communication. Automate the boring stuff so you can focus on building what matters.
         </p>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          <Button 
-            onClick={() => window.location.href='/login'} 
-            className="h-16 px-12 text-lg bg-blue-600 hover:bg-blue-700 w-full md:w-auto rounded-2xl shadow-xl shadow-blue-200 font-bold"
-          >
-            Secure Your Business <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <div className="flex items-center gap-2 text-slate-400 text-sm">
-             <ShieldAlert className="w-4 h-4" /> Trusted by 50+ Nairobi Vendors
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-blue-200 transition-all flex items-center justify-center gap-2">
+            Get Started for Free <ArrowRight size={20} />
+          </button>
+          <p className="text-sm text-slate-400 font-medium italic">No credit card required.</p>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="bg-white py-12 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-8">
+          <p className="text-center text-slate-400 text-sm font-bold uppercase tracking-widest mb-8">
+            Trusted by teams at
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
+            <div className="font-bold text-xl">ACME Corp</div>
+            <div className="font-bold text-xl">GLOBALTECH</div>
+            <div className="font-bold text-xl">SYNC.IO</div>
+            <div className="font-bold text-xl">FLOWS</div>
           </div>
         </div>
       </section>
 
-      {/* The "Painkiller" Features */}
-      <section className="bg-slate-50 py-24 px-8 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">The Compliance Bridge</h2>
-            <p className="text-slate-500">Why change your whole system when you only need a bridge?</p>
+      {/* Features - The "Value" */}
+      <section className="py-24 px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">Everything you need to scale</h2>
+          <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Feature 1 */}
+          <div className="group p-8 bg-white rounded-3xl border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-300">
+            <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+              <Layers className="text-blue-600 group-hover:text-white" size={24} />
+            </div>
+            <h3 className="font-bold text-xl mb-3">Multi-Stack Sync</h3>
+            <p className="text-slate-500 leading-relaxed">
+              Connect 100+ apps in minutes. BridgeSync ensures your data is consistent everywhere.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
-              <div className="bg-blue-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <Clock className="w-7 h-7 text-blue-600 group-hover:text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Save 2 Hours Daily</h3>
-              <p className="text-slate-500 leading-relaxed">End the "Evening Typing Session." Upload your entire day's work in under 5 seconds.</p>
+
+          {/* Feature 2 */}
+          <div className="group p-8 bg-white rounded-3xl border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-300">
+            <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+              <Lock className="text-blue-600 group-hover:text-white" size={24} />
             </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
-              <div className="bg-blue-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <Save className="w-7 h-7 text-blue-600 group-hover:text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Keep Your Excel</h3>
-              <p className="text-slate-500 leading-relaxed">Don't buy expensive new ERPs. BridgeSync works with your current Excel or CSV sales records.</p>
+            <h3 className="font-bold text-xl mb-3">Enterprise Security</h3>
+            <p className="text-slate-500 leading-relaxed">
+              Bank-grade encryption and SOC2 compliance come standard on every single account.
+            </p>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="group p-8 bg-white rounded-3xl border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-300">
+            <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+              <CheckCircle2 className="text-blue-600 group-hover:text-white" size={24} />
             </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
-              <div className="bg-blue-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <CheckCircle2 className="w-7 h-7 text-blue-600 group-hover:text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Zero Error Policy</h3>
-              <p className="text-slate-500 leading-relaxed">Our AI-Scrubber catches missing PINs and incorrect amounts before they reach the KRA portal.</p>
-            </div>
+            <h3 className="font-bold text-xl mb-3">Real-time Analytics</h3>
+            <p className="text-slate-500 leading-relaxed">
+              Monitor every bridge and sync event with beautiful, easy-to-read dashboards.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Pricing / Offer Section */}
-      <section className="py-24 px-8 text-center">
-        <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-16 text-white shadow-2xl relative overflow-hidden">
-            {/* Background Decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-          
-          <h2 className="text-4xl font-bold mb-4 relative z-10">Early Adopter Offer</h2>
-          <p className="text-slate-400 mb-10 text-lg">One-time payment. Lifetime compliance peace of mind.</p>
-          
-          <div className="flex items-end justify-center gap-2 mb-10 relative z-10">
-            <span className="text-6xl font-black text-white italic">Ksh 25,000</span>
-            <span className="text-slate-500 text-sm font-bold uppercase mb-2">/ one-time</span>
+      {/* Footer / Final CTA */}
+      <footer className="bg-slate-900 text-white py-20 px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to sync your future?</h2>
+          <button className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+            Get BridgeSync Pro Now
+          </button>
+          <div className="mt-12 pt-12 border-t border-slate-800 text-slate-500 text-sm">
+            © {new Date().getFullYear()} BridgeSync Pro. All rights reserved.
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 text-left max-w-2xl mx-auto relative z-10">
-            <div className="flex items-center gap-3 text-slate-300"><CheckCircle2 className="text-blue-500 w-5 h-5" /> Professional Set-up</div>
-            <div className="flex items-center gap-3 text-slate-300"><CheckCircle2 className="text-blue-500 w-5 h-5" /> Direct KRA API Link</div>
-            <div className="flex items-center gap-3 text-slate-300"><CheckCircle2 className="text-blue-500 w-5 h-5" /> Unlimited Sales Sync</div>
-            <div className="flex items-center gap-3 text-slate-300"><CheckCircle2 className="text-blue-500 w-5 h-5" /> Archive for Tax Audits</div>
-          </div>
-
-          <Button 
-            onClick={() => window.location.href='/login'} 
-            className="w-full md:w-auto h-16 px-16 bg-blue-600 hover:bg-blue-700 text-lg font-bold rounded-2xl transition-transform hover:scale-105"
-          >
-            Get Compliant Today
-          </Button>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-slate-100 text-center">
-        <p className="text-slate-400 text-sm">© 2024 BridgeSync Pro. Helping Kenyan Businesses Grow Compliantly.</p>
       </footer>
     </div>
-  )
+  );
 }
