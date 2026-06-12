@@ -132,8 +132,8 @@ export default function Dashboard() {
             <ShieldCheck className="text-blue-600 w-4 h-4" />
             <span className="text-blue-600 font-bold uppercase tracking-widest text-[10px]">BridgeSync Pro</span>
           </div>
-          <h1 className="text-3xl font-bold text-slate-800">Scrubbing Station</h1>
-          <p className="text-slate-500">Validation area for staged eTIMS data.</p>
+          <h1 className="text-3xl font-bold text-slate-800">DASHBOARD</h1>
+          <p className="text-slate-500">Upload, validate and sync your  ETIMS data</p>
         </div>
         <div className="flex gap-2">
           <Button onClick={fetchInvoices} variant="outline" size="sm">

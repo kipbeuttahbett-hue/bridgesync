@@ -79,7 +79,7 @@ export default function SettingsPage() {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        
           <div>
             <label className="block text-sm font-medium mb-1">KRA PIN</label>
             <input 
@@ -98,7 +98,7 @@ export default function SettingsPage() {
               onChange={(e) => setProfile({...profile, device_id: e.target.value})}
             />
           </div>
-        </div>
+        
 
         <div>
           <label className="block text-sm font-medium mb-1">eTIMS Secret Key</label>

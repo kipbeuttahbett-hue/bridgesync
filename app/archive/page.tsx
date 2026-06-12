@@ -35,12 +35,9 @@ export default function ArchivePage() {
   return (
     <div className="page-container">
       <div className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-3xl font-extrabold text-slate-900">Compliance Archive</h1>
-          <p className="text-slate-500">History of official KRA eTIMS submissions.</p>
-        </div>
+        
         <Button variant="outline" className="shadow-sm">
-          <Download className="mr-2 h-4 w-4" /> Export Report
+          <Download className="mr-2 h-4 w-4" /> Download Report
         </Button>
       </div>
 

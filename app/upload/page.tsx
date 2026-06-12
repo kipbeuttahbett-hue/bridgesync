@@ -106,7 +106,7 @@ export default function UploadPage() {
           onClick={triggerFileInput} 
           className="bg-blue-600 hover:bg-blue-700 h-14 px-10 text-lg rounded-xl shadow-lg"
         >
-          Choose File from Desktop
+          Upload File
         </Button>
         {fileName && (
           <p className="mt-4 text-blue-600 font-bold flex items-center justify-center gap-2">
@@ -121,7 +121,7 @@ export default function UploadPage() {
             <h2 className="text-xl font-bold text-slate-800">Preview ({data.length} rows)</h2>
             <Button onClick={saveToDatabase} disabled={loading} className="bg-green-600 hover:bg-green-700 px-8 h-12">
               {loading ? <Loader2 className="animate-spin mr-2" /> : <CheckCircle2 className="mr-2" />}
-              Push to Supabase Staging
+              Push To SupaBase
             </Button>
           </div>
           <div className="border rounded-2xl overflow-hidden bg-white shadow-sm">
